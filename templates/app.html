@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Comment Sentiment Analyzer</h2>
+        <form action="/predict" method="post">
+            <label for="comment">Enter a comment:</label><br>
+            <textarea id="comment" name="comment" rows="6" cols="60" required></textarea><br><br>
+            <input type="submit" value="Predict Sentiment">
+        </form>
+        <h3>Predicted Sentiment: {{ prediction }}</h3>
+        <p>Model confidence: {{ confidence }}%</p>
+        <img src="/static/confidence.png" alt="Model Confidence" style="width: 100%; max-width: 400px;" />
+    </div>
+</body>
+</html>
